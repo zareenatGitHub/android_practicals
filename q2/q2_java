@@ -1,0 +1,39 @@
+package com.example.practical02;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+
+import android.widget.Button;
+import android.widget.TextView;
+import android.view.View;
+publicclassMainActivityextendsAppCompatActivity {
+    Buttonincrement_button;
+    TextViewnum;
+    Buttondecrement_button;
+    Buttonreset_button;
+
+    @Override
+    protectedvoidonCreate(BundlesavedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        increment_button = (Button) findViewById(R.id.increment_button);
+        num = (TextView) findViewById(R.id.num);
+        decrement_button = (Button) findViewById(R.id.decrement_button);
+        reset_button = (Button) findViewById(R.id.reset_button);
+    }
+
+    publicvoidincrement(Viewview){
+        Stringnum_string = num.getText().toString();
+        Integerincremented_num = Integer.parseInt(num_string) + 1;
+        num.setText(incremented_num.toString());
+    }
+    publicvoiddecrement(Viewview){
+        Stringnum_string = num.getText().toString();
+        Integerdecremented_num = Integer.parseInt(num_string) - 1;
+        num.setText(decremented_num.toString());
+    }
+    publicvoidreset(Viewview){
+        num.setText("0");
+    }
+}
+
